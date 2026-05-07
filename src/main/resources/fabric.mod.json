@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "shulkerlayers",
+	"version": "${version}",
+	"name": "ShulkerLayers",
+	"description": "Pack shulker boxes inside shulker boxes. Configurable nesting depth via a layer-based system.",
+	"authors": [
+		"TAPM"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/shulkerlayers",
+		"sources": "https://github.com/tapm/shulkerlayers",
+		"issues": "https://github.com/tapm/shulkerlayers/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/shulkerlayers/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"tapm.shulkerlayers.ShulkerLayers"
+		]
+	},
+	"mixins": [
+		"shulkerlayers.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.2-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

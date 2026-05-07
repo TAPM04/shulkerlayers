@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"S": "minecraft:shulker_shell",
+		"B": "#minecraft:shulker_boxes"
+	},
+	"pattern": [
+		" S ",
+		"SBS",
+		" S "
+	],
+	"result": {
+		"id": "minecraft:shulker_box",
+		"components": {
+			"shulkerlayers:layer": 1
+		}
+	}
+}
