@@ -64,4 +64,18 @@ public final class ShulkerLayersConfig {
 			ShulkerLayers.LOGGER.warn("Config I/O error, using defaults: {}", e.getMessage());
 		}
 	}
+
+	public static void save() {
+		Path configDir = FabricLoader.getInstance().getConfigDir();
+		Path configFile = configDir.resolve(ShulkerLayers.MOD_ID + ".json");
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+		try {
+			Files.createDirectories(configDir);
+			Files.writeString(configFile, gson.toJson(INSTANCE));
+			ShulkerLayers.LOGGER.info("Config saved: maxDepth={}", INSTANCE.maxDepth);
+		} catch (IOException e) {
+			ShulkerLayers.LOGGER.warn("Config I/O error while saving: {}", e.getMessage());
+		}
+	}
 }

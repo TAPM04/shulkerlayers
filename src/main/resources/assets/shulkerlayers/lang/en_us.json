@@ -1,3 +1,7 @@
 {
-	"tooltip.shulkerlayers.layer": "Layer %s"
+	"tooltip.shulkerlayers.layer": "Layer %s",
+	"screen.shulkerlayers.config": "ShulkerLayers Configuration",
+	"option.shulkerlayers.max_depth": "Max Depth (0–64)",
+	"option.shulkerlayers.max_depth.desc": "Highest layer a shulker box can be upgraded to. 0 effectively disables the upgrade recipe. Boxes above this layer are treated as if they were at the cap, so they can't be nested past it.",
+	"screen.shulkerlayers.reset": "Reset to Default"
 }

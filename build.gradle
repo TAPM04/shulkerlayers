@@ -7,6 +7,21 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	// ModMenu
+	maven { url = "https://maven.terraformersmc.com/releases" }
+}
+
+loom {
+	// Split into a common (main) and a client-only source set. The config-screen integration
+	// (ModMenu + YACL) is client-only and must never load on a dedicated server.
+	splitEnvironmentSourceSets()
+
+	mods {
+		"shulkerlayers" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
 }
 
 dependencies {
@@ -16,6 +31,9 @@ dependencies {
 
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
+	// ModMenu — client-only, optional (declared as a suggestion in fabric.mod.json). It only opens
+	// the config screen; the screen itself is plain vanilla, so no YACL is needed here.
+	clientImplementation "com.terraformersmc:modmenu:20.0.0-beta.2"
 }
 
 processResources {

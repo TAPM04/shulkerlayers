@@ -38,9 +38,13 @@ A config file is created at `<game>/config/shulkerlayers.json` on first launch:
 
 | Key        | Type | Default | Range  | Description                                                                          |
 | ---------- | ---- | ------- | ------ | ------------------------------------------------------------------------------------ |
-| `maxDepth` | int  | `3`     | 0 – 64 | Highest layer a shulker box can be upgraded to. `0` effectively disables the recipe. |
+| `maxDepth` | int  | `3`     | 0 – 64 | Highest layer a shulker box can be upgraded to. `0` effectively disables the recipe. Boxes above this layer are treated as if they were at the cap, so they cannot be nested past it. |
 
-Mod Menu support is planned for the 26.2 release.
+### Mod Menu Support
+
+With [Mod Menu](https://modrinth.com/mod/modmenu) installed, `maxDepth` can also be edited in-game from the mod list — changes apply immediately (singleplayer), no restart needed. Mod Menu is optional: without it the JSON file is used.
+
+![ShulkerLayers Max Depth configuration screen in Mod Menu](docs/modmenu_config.png)
 
 ## Installation
 
@@ -52,8 +56,8 @@ Server and client both need the mod installed (the `layer` data component is net
 
 ## Compatibility
 
-- Targets Minecraft 26.2 (snapshot builds — see `gradle.properties` for the exact build).
-- Fabric Loader ≥ 0.19.2, Java 25.
+- Targets Minecraft 26.2.
+- Fabric Loader ≥ 0.19.3, Java 25.
 - Should be compatible with most mods that don't themselves rewrite `ShulkerBoxBlockEntity` or `ShulkerBoxSlot.mayPlace`. Mixins are scoped tightly to those classes plus `ShapedRecipe#matches`/`assemble` (only triggers on the layer-upgrade recipe) and `ItemStack#addDetailsToTooltip`.
 
 ## License

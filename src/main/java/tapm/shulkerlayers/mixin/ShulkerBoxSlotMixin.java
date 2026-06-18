@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import tapm.shulkerlayers.component.ShulkerLayersComponents;
+import tapm.shulkerlayers.config.ShulkerLayersConfig;
 import tapm.shulkerlayers.duck.LayerAware;
 
 @Mixin(ShulkerBoxSlot.class)
@@ -26,8 +27,10 @@ public abstract class ShulkerBoxSlotMixin extends Slot {
 			return;
 		}
 
-		int incomingLayer = ShulkerLayersComponents.getLayer(itemStack);
-		int hostLayer = shulkerlayers$hostLayer();
+		// Treat every layer above maxDepth as if it were exactly maxDepth
+		int maxDepth = ShulkerLayersConfig.get().maxDepth;
+		int incomingLayer = Math.min(ShulkerLayersComponents.getLayer(itemStack), maxDepth);
+		int hostLayer = Math.min(shulkerlayers$hostLayer(), maxDepth);
 
 		if (incomingLayer < hostLayer) {
 			cir.setReturnValue(true);

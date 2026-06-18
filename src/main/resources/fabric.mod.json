@@ -9,8 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/shulkerlayers",
-		"sources": "https://github.com/tapm/shulkerlayers",
-		"issues": "https://github.com/tapm/shulkerlayers/issues"
+		"sources": "https://github.com/TAPM04/shulkerlayers",
+		"issues": "https://github.com/TAPM04/shulkerlayers/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/shulkerlayers/icon.png",
@@ -18,15 +18,21 @@
 	"entrypoints": {
 		"main": [
 			"tapm.shulkerlayers.ShulkerLayers"
+		],
+		"modmenu": [
+			"tapm.shulkerlayers.client.ModMenuIntegration"
 		]
 	},
 	"mixins": [
 		"shulkerlayers.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.19.2",
-		"minecraft": "~26.2-",
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
 	}
 }

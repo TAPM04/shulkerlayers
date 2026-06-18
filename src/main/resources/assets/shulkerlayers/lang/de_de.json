@@ -1,3 +1,7 @@
 {
-	"tooltip.shulkerlayers.layer": "Ebene %s"
+	"tooltip.shulkerlayers.layer": "Ebene %s",
+	"screen.shulkerlayers.config": "ShulkerLayers Konfiguration",
+	"option.shulkerlayers.max_depth": "Maximale Tiefe (0–64)",
+	"option.shulkerlayers.max_depth.desc": "Höchste Ebene, auf die eine Shulker-Box aufgewertet werden kann. 0 deaktiviert das Aufwertungs-Rezept praktisch. Boxen oberhalb dieser Ebene werden behandelt, als lägen sie auf dem Maximum, lassen sich also nicht darüber hinaus verschachteln.",
+	"screen.shulkerlayers.reset": "Zurücksetzen"
 }
